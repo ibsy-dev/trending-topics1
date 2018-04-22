@@ -1,3 +1,5 @@
+#!/usr/bin/python 
+
 pip install python twitter
 
 import twitter
