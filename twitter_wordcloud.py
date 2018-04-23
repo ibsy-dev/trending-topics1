@@ -22,10 +22,11 @@ consumer_secret="dC6Uc13Xhrtsel92uBlD3r6QyEkWq8oCFR6psW8rCsURR4YQaY",
 access_token_key="46344285-UOV7LAxBlelMHA59eYH1wteT4FssMjoBQJJIq1UPU",
 access_token_secret="FXSMZSOZameYmsfbP2Gac2COGPPF8ZDJWoWyQniLxVQxz")
 
-searchlist=api.GetSearch(term="run",  since='2017-07-01', geocode="1.350512,103.8722258,100mi",count=50)
+searchlist=api.GetSearch(term="coffee",  since='2017-07-01', geocode="1.350512,103.8722258,100mi",count=50)
 
 
 #print([s.text for s in searchlist])
+# no need to print text of tweets anymore ; use them in viz below
 for s in searchlist:
 	searchtext = s.text
 	print (searchtext)
@@ -52,11 +53,10 @@ wordcloud = WordCloud(
                          ).generate(str(data))
 
 
-print(wordcloud)
+
 fig = plt.figure(1)
-fig.savefig("word2.png", dpi=900)
 plt.imshow(wordcloud)
 plt.axis('off')
 plt.show()
 
-fig.savefig("word2.png", dpi=900)
+fig.savefig("coffee1.png", dpi=900)
